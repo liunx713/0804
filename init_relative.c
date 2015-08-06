@@ -8,8 +8,8 @@ void init_relative()
 		char relation[10];
 	};
 	struct Member mem[10];
-	int num,i;
-	printf("Please Input The Number Of Your Group(1-10 people):");//设置小组人数
+	int num,i,*p2=&num;
+	printf("Please Input The Number Of Your Group(1-10 people):");
 	scanf_s("%d", &num);
 	while(num>10||num<1)
 	{
@@ -18,7 +18,8 @@ void init_relative()
 	}
 	for (i=0;i<num;i++)
 	{
-		printf("Please The %dth Member Of You(name age sex relationship):\n",i+1);
+		printf("Please The No.%d Member Of You(name age sex relationship):\n",i+1);
 		scanf_s("%s%d%s%s",mem[i].name,sizeof(mem[i].name),&mem[i].age,mem[i].sex,sizeof(mem[i].sex),mem[i].relation,sizeof(mem[i].relation));
 	}
+	init_lifestyle(p2);
 }
